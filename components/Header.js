@@ -1,6 +1,6 @@
 "use client";
 
-import { Phone } from "lucide-react";
+import { Phone, MessageSquare } from "lucide-react";
 import siteConfig from "@/config/siteConfig";
 
 export default function Header() {
@@ -18,12 +18,6 @@ export default function Header() {
                         <a href="#services" className="text-text-muted hover:text-primary transition-colors duration-200">
                             Services
                         </a>
-                        <a href="#about" className="text-text-muted hover:text-primary transition-colors duration-200">
-                            About
-                        </a>
-                        <a href="#reviews" className="text-text-muted hover:text-primary transition-colors duration-200">
-                            Reviews
-                        </a>
                         <a href="#service-area" className="text-text-muted hover:text-primary transition-colors duration-200">
                             Service Area
                         </a>
@@ -34,19 +28,19 @@ export default function Header() {
 
                     <div className="flex items-center gap-3">
                         <a
+                            href={siteConfig.smsHref}
+                            className="inline-flex items-center gap-2 bg-cta hover:bg-cta-dark text-white font-bold text-sm px-4 py-2 rounded-lg transition-colors duration-200 cursor-pointer"
+                        >
+                            <MessageSquare className="w-4 h-4" />
+                            <span className="hidden sm:inline">Text Us Now</span>
+                            <span className="sm:hidden">Text</span>
+                        </a>
+                        <a
                             href={siteConfig.phoneHref}
                             className="hidden sm:flex items-center gap-2 text-sm font-medium text-text-muted"
                         >
                             <Phone className="w-4 h-4" />
                             {siteConfig.phone}
-                        </a>
-                        <a
-                            href={siteConfig.phoneHref}
-                            className="inline-flex items-center gap-2 bg-cta hover:bg-cta-dark text-white font-bold text-sm px-4 py-2 rounded-lg transition-colors duration-200 cursor-pointer"
-                        >
-                            <Phone className="w-4 h-4" />
-                            <span className="hidden sm:inline">Call Now</span>
-                            <span className="sm:hidden">Call</span>
                         </a>
                     </div>
                 </div>

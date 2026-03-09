@@ -1,151 +1,155 @@
 "use client";
 
-import { useEffect } from "react";
-import { Phone } from "lucide-react";
+import { Phone, Mail, MapPin, Clock, Star } from "lucide-react";
 import siteConfig from "@/config/siteConfig";
 
 export default function Hero() {
-    useEffect(() => {
-        document.querySelectorAll(".animation-line").forEach((path) => {
-            const len = path.getTotalLength();
-            path.style.strokeDasharray = `${len}px`;
-            path.style.strokeDashoffset = `${len}px`;
-
-            setTimeout(() => {
-                path.style.transition = "stroke-dashoffset 2s ease-in-out";
-                path.style.strokeDashoffset = "0px";
-            }, 500);
-        });
-    }, []);
+    const featuredReviews = siteConfig.reviews.items.slice(0, 3);
 
     return (
-        <>
-            <style>
-                {`
-                    @keyframes gradient {
-                        0% { background-position: 0% 50%; }
-                        50% { background-position: 100% 50%; }
-                        100% { background-position: 0% 50%; }
-                    }
+        <section className="relative min-h-[90vh] flex items-center bg-primary-dark text-white overflow-hidden">
+            {/* Background Image with Overlay */}
+            <div
+                className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+                style={{ backgroundImage: "url('/hero-bg.jpg')" }}
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-[#0f1b2d]/90 via-[#0f1b2d]/80 to-[#0f1b2d]/60" />
 
-                    @keyframes fadeIn {
-                        from { opacity: 0; transform: translateY(20px); }
-                        to { opacity: 1; transform: translateY(0); }
-                    }
+            {/* Content */}
+            <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 pt-32">
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-16 items-start">
 
-                    @keyframes patternScroll {
-                        0% { transform: translate(-5%, -5%); }
-                        100% { transform: translate(5%, 5%); }
-                    }
+                    {/* Left Column — Main Content */}
+                    <div className="lg:col-span-2">
 
-                    .animate-fadeIn {
-                        animation: fadeIn 1s ease-out forwards;
-                    }
+                        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.1] font-[family-name:var(--font-heading)]">
+                            Licensed Electrician in{" "}
+                            <span className="text-primary-light">New York City</span>
+                        </h1>
 
-                    .animate-fadeIn-delay-1 {
-                        opacity: 0;
-                        animation: fadeIn 1s ease-out 0.3s forwards;
-                    }
 
-                    .animate-fadeIn-delay-2 {
-                        opacity: 0;
-                        animation: fadeIn 1s ease-out 0.6s forwards;
-                    }
 
-                    .animate-patternScroll {
-                        animation: patternScroll 20s linear infinite;
-                    }
+                        {/* CTA Buttons */}
+                        <div className="mt-8 flex flex-col sm:flex-row gap-4">
+                            <a
+                                href="#contact"
+                                className="inline-flex items-center justify-center bg-cta hover:bg-cta-dark text-white font-bold text-lg px-8 py-4 rounded-lg transition-all duration-200 hover:translate-y-[-2px] shadow-lg shadow-orange-500/20 cursor-pointer"
+                            >
+                                Get a Free Quote
+                            </a>
+                            <a
+                                href={siteConfig.phoneHref}
+                                className="inline-flex items-center justify-center gap-2 border-2 border-white/20 hover:border-primary-light text-white font-semibold text-lg px-8 py-4 rounded-lg transition-all duration-200 hover:translate-y-[-2px] cursor-pointer"
+                            >
+                                <Phone className="w-5 h-5" />
+                                {siteConfig.phone}
+                            </a>
+                        </div>
 
-                    .gradient-text {
-                        background: linear-gradient(270deg, #1E40AF, #3B82F6, #60A5FA, #1E40AF);
-                        background-size: 600% 600%;
-                        -webkit-background-clip: text;
-                        -webkit-text-fill-color: transparent;
-                        animation: gradient 8s ease infinite;
-                    }
-
-                    .animation-line {
-                        fill: none;
-                        stroke: rgba(59, 130, 246, 0.2);
-                        stroke-width: 2;
-                    }
-
-                    @keyframes pulse {
-                        0% { box-shadow: 0 0 5px rgba(249, 115, 22, 0.3); }
-                        50% { box-shadow: 0 0 25px rgba(249, 115, 22, 0.5); }
-                        100% { box-shadow: 0 0 5px rgba(249, 115, 22, 0.3); }
-                    }
-
-                    .pulse-animation {
-                        animation: pulse 2s infinite;
-                    }
-
-                    @media (prefers-reduced-motion: reduce) {
-                        .gradient-text { animation: none; }
-                        .animate-patternScroll { animation: none; }
-                        .pulse-animation { animation: none; }
-                        .animate-fadeIn, .animate-fadeIn-delay-1, .animate-fadeIn-delay-2 {
-                            animation: none;
-                            opacity: 1;
-                        }
-                    }
-                `}
-            </style>
-
-            <section className="relative min-h-screen flex items-center justify-center bg-primary-dark text-white overflow-hidden pt-16">
-                {/* Dynamic SVG Lines */}
-                <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
-                    <svg className="absolute w-full h-full" viewBox="0 0 177 159" preserveAspectRatio="none">
-                        <path className="animation-line" d="M176 1L53.5359 1C52.4313 1 51.5359 1.89543 51.5359 3L51.5359 56C51.5359 57.1046 50.6405 58 49.5359 58L0 58" />
-                    </svg>
-                    <svg className="absolute w-full h-full" viewBox="0 0 176 59" preserveAspectRatio="none">
-                        <path className="animation-line" d="M0 1L122.464 1C123.569 1 124.464 1.89543 124.464 3L124.464 56C124.464 57.1046 125.36 58 126.464 58L176 58" />
-                    </svg>
-                </div>
-
-                {/* Background Pattern */}
-                <div
-                    className="absolute w-[200%] h-[200%] bg-[repeating-linear-gradient(45deg,transparent,transparent_10px,rgba(59,130,246,0.03)_10px,rgba(59,130,246,0.03)_20px)] animate-patternScroll"
-                    style={{ top: "-50%", left: "-50%" }}
-                />
-
-                {/* Content */}
-                <div className="relative z-10 text-center max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 animate-fadeIn">
-                    <p className="text-primary-light font-medium text-sm sm:text-base tracking-widest uppercase mb-6 animate-fadeIn-delay-1">
-                        {siteConfig.licenseNumber} &middot; Est. {siteConfig.yearEstablished}
-                    </p>
-
-                    <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold leading-tight font-[family-name:var(--font-heading)]">
-                        <span className="gradient-text">{siteConfig.businessName}</span>
-                    </h1>
-
-                    <p className="mt-6 text-lg sm:text-xl text-blue-200 max-w-2xl mx-auto animate-fadeIn-delay-1">
-                        {siteConfig.tagline}
-                    </p>
-
-                    <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center animate-fadeIn-delay-2">
-                        <a
-                            href="#contact"
-                            className="inline-flex items-center justify-center bg-cta hover:bg-cta-dark text-white font-bold text-lg px-8 py-4 rounded-lg transition-all duration-200 hover:translate-y-[-2px] pulse-animation cursor-pointer"
-                        >
-                            Get a Free Quote
-                        </a>
-                        <a
-                            href={siteConfig.phoneHref}
-                            className="inline-flex items-center justify-center gap-2 border-2 border-white/20 hover:border-primary-light text-white font-semibold text-lg px-8 py-4 rounded-lg transition-all duration-200 hover:translate-y-[-2px] cursor-pointer"
-                        >
-                            <Phone className="w-5 h-5" />
-                            {siteConfig.phone}
-                        </a>
+                        {/* Review Quotes */}
+                        <div className="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-6">
+                            {featuredReviews.map((review, i) => (
+                                <div key={i} className="space-y-2">
+                                    <div className="flex gap-0.5">
+                                        {[...Array(review.rating)].map((_, j) => (
+                                            <Star
+                                                key={j}
+                                                className="w-4 h-4 fill-cta text-cta"
+                                            />
+                                        ))}
+                                    </div>
+                                    <p className="text-blue-100/70 text-sm leading-relaxed italic">
+                                        &ldquo;{review.text.length > 100
+                                            ? review.text.substring(0, 100) + "..."
+                                            : review.text}&rdquo;
+                                    </p>
+                                    <p className="text-blue-300/50 text-xs font-medium">
+                                        &mdash; {review.author}
+                                    </p>
+                                </div>
+                            ))}
+                        </div>
                     </div>
 
-                    {siteConfig.emergencyAvailable && (
-                        <p className="mt-8 text-blue-300/60 text-sm animate-fadeIn-delay-2">
-                            24/7 Emergency Service Available
-                        </p>
-                    )}
+                    {/* Right Column — Info Sidebar */}
+                    <div className="space-y-0 bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10">
+                        {/* Hours */}
+                        <div className="pb-5">
+                            <div className="flex items-center gap-2 mb-2">
+                                <Clock className="w-4 h-4 text-primary-light" />
+                                <h3 className="text-white font-bold text-lg">Hours</h3>
+                            </div>
+                            <p className="text-blue-200/70 text-sm">
+                                {siteConfig.hoursOfOperation}
+                            </p>
+                            {siteConfig.emergencyAvailable && (
+                                <p className="text-cta text-xs font-semibold mt-1">
+                                    24/7 Emergency Available
+                                </p>
+                            )}
+                        </div>
+
+                        <div className="border-t border-white/10" />
+
+                        {/* Service Area */}
+                        <div className="py-5">
+                            <div className="flex items-center gap-2 mb-2">
+                                <MapPin className="w-4 h-4 text-primary-light" />
+                                <h3 className="text-white font-bold text-lg">Service Area</h3>
+                            </div>
+                            <p className="text-blue-200/70 text-sm">
+                                {siteConfig.serviceArea.suburbs.slice(0, 5).join(", ")} and surrounding areas
+                            </p>
+                        </div>
+
+                        <div className="border-t border-white/10" />
+
+                        {/* Contact */}
+                        <div className="py-5">
+                            <div className="flex items-center gap-2 mb-2">
+                                <Phone className="w-4 h-4 text-primary-light" />
+                                <h3 className="text-white font-bold text-lg">Contact</h3>
+                            </div>
+                            <a
+                                href={siteConfig.phoneHref}
+                                className="text-blue-200/70 text-sm hover:text-white transition-colors block"
+                            >
+                                {siteConfig.phone}
+                            </a>
+                            <a
+                                href={`mailto:${siteConfig.email}`}
+                                className="text-blue-200/70 text-sm hover:text-white transition-colors block mt-1"
+                            >
+                                {siteConfig.email}
+                            </a>
+                        </div>
+
+                        <div className="border-t border-white/10" />
+
+                        {/* Google Rating */}
+                        <div className="pt-5">
+                            <div className="flex items-center gap-2 mb-2">
+                                <Star className="w-4 h-4 fill-cta text-cta" />
+                                <h3 className="text-white font-bold text-lg">Reviews</h3>
+                            </div>
+                            <div className="flex items-center gap-2">
+                                <div className="flex gap-0.5">
+                                    {[...Array(5)].map((_, i) => (
+                                        <Star
+                                            key={i}
+                                            className="w-3.5 h-3.5 fill-cta text-cta"
+                                        />
+                                    ))}
+                                </div>
+                                <span className="text-blue-200/70 text-sm">
+                                    {siteConfig.reviews.rating}/5 ({siteConfig.reviews.totalReviews} reviews)
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
-            </section>
-        </>
+            </div>
+        </section>
     );
 }

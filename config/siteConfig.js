@@ -6,6 +6,7 @@ const siteConfig = {
   tagline: "Licensed Electrician Serving New York City Since 2015",
   phone: "(212) 555-0173",
   phoneHref: "tel:+12125550173",
+  smsHref: "sms:+12125550173",
   email: "adam@adamsmithelectrical.com",
   address: "247 W 38th St, New York, NY 10018",
   licenseNumber: "Lic. #014729",

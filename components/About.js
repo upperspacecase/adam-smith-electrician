@@ -39,14 +39,7 @@ export default function About() {
                         <p className="text-text-muted text-lg leading-relaxed">
                             {about.text}
                         </p>
-                        <div className="mt-6 flex items-center gap-4">
-                            <span className="inline-flex items-center text-sm font-medium text-primary bg-primary/10 px-3 py-1.5 rounded-full">
-                                {siteConfig.licenseNumber}
-                            </span>
-                            <span className="inline-flex items-center text-sm font-medium text-primary bg-primary/10 px-3 py-1.5 rounded-full">
-                                Est. {siteConfig.yearEstablished}
-                            </span>
-                        </div>
+
                     </div>
                 </div>
             </div>

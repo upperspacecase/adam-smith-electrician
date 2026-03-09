@@ -40,10 +40,7 @@ export default function Footer() {
                             <Clock className="w-4 h-4 mt-0.5 flex-shrink-0" />
                             <span>{siteConfig.hoursOfOperation}</span>
                         </div>
-                        <div className="flex items-center gap-2 text-blue-200 text-sm mt-2">
-                            <ShieldCheck className="w-4 h-4 flex-shrink-0" />
-                            <span>{siteConfig.licenseNumber}</span>
-                        </div>
+
                     </div>
 
                     <div>

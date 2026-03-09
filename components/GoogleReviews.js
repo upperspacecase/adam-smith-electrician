@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, useState, useEffect } from "react";
+import siteConfig from "@/config/siteConfig";
 
 function StarRating({ rating }) {
     return (
@@ -65,7 +66,7 @@ function GoogleIcon() {
 
 function ReviewCard({ review }) {
     return (
-        <div className="flex-shrink-0 w-[300px] sm:w-[340px] bg-white rounded-xl border border-gray-100 p-5">
+        <div className="flex-shrink-0 w-[280px] sm:w-[300px] md:w-[340px] bg-white rounded-xl border border-gray-100 p-4 sm:p-5">
             <div className="flex items-start justify-between mb-3">
                 <div className="flex items-center gap-3">
                     <Avatar author={review.author} avatar={review.avatar} />
@@ -120,7 +121,7 @@ export default function GoogleReviews({ reviews }) {
                     <div className="lg:w-[240px] flex-shrink-0">
                         <div className="lg:sticky lg:top-24 text-center lg:text-left">
                             <h3 className="text-xl font-bold text-primary-dark mb-1 font-[family-name:var(--font-heading)]">
-                                {reviews.businessName}
+                                {siteConfig.businessName}
                             </h3>
                             <div className="flex items-center justify-center lg:justify-start gap-2 mb-1">
                                 <span className="text-2xl font-bold text-primary-dark">
@@ -139,7 +140,7 @@ export default function GoogleReviews({ reviews }) {
                                 href={reviews.googleMapsUrl}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="inline-flex items-center gap-2 bg-[#4285F4] hover:bg-[#3367d6] text-white text-sm font-medium px-5 py-2.5 rounded-full transition-colors duration-200 cursor-pointer"
+                                className="inline-flex items-center gap-2 bg-[#4285F4] hover:bg-[#3367d6] text-white text-sm font-medium px-5 py-2.5 min-h-[44px] rounded-full transition-colors duration-200 cursor-pointer"
                             >
                                 <GoogleIcon />
                                 Review us on Google

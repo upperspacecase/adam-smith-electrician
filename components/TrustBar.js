@@ -2,17 +2,17 @@ import { Star, ShieldCheck, Clock, Award } from "lucide-react";
 import siteConfig from "@/config/siteConfig";
 
 export default function TrustBar() {
-    const { trustBar } = siteConfig;
+    const yearsInBusiness = new Date().getFullYear() - siteConfig.yearEstablished;
 
     const items = [
         {
             icon: Star,
-            label: `${trustBar.googleRating} Stars`,
-            value: `${trustBar.googleReviewCount} Google Reviews`,
+            label: `${siteConfig.reviews.rating} Stars`,
+            value: `${siteConfig.reviews.totalReviews} Google Reviews`,
         },
         {
             icon: Clock,
-            label: `${trustBar.yearsInBusiness}+ Years`,
+            label: `${yearsInBusiness}+ Years`,
             value: "In Business",
         },
         {
@@ -22,7 +22,7 @@ export default function TrustBar() {
         },
         {
             icon: Award,
-            label: trustBar.credential,
+            label: siteConfig.trustBar.credential,
             value: "Certified",
         },
     ];

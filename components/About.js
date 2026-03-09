@@ -9,12 +9,12 @@ export default function About() {
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                     {/* Photo */}
                     <div className="relative">
-                        <div className="aspect-[4/3] rounded-xl overflow-hidden bg-primary-dark">
+                        <div className="rounded-xl overflow-hidden bg-primary-dark">
                             {about.image ? (
                                 <img
                                     src={about.image}
                                     alt={`${siteConfig.businessName} team`}
-                                    className="w-full h-full object-cover"
+                                    className="w-full h-auto"
                                 />
                             ) : (
                                 <div className="w-full h-full flex items-center justify-center">

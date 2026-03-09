@@ -21,7 +21,7 @@ export async function POST(request) {
         //
         // await resend.emails.send({
         //   from: "Website <noreply@yourdomain.com>",
-        //   to: siteConfig.contactForm.recipientEmail,
+        //   to: siteConfig.email,
         //   subject: `New Lead: ${service} — ${name}`,
         //   text: `Name: ${name}\nPhone: ${phone}\nService: ${service}`,
         // });

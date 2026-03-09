@@ -22,7 +22,7 @@ export default function Hero() {
                     {/* Left Column — Main Content */}
                     <div className="lg:col-span-2">
 
-                        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.1] font-[family-name:var(--font-heading)]">
+                        <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold leading-[1.1] font-[family-name:var(--font-heading)]">
                             Licensed Electrician in{" "}
                             <span className="text-primary-light">New York City</span>
                         </h1>
@@ -30,16 +30,16 @@ export default function Hero() {
 
 
                         {/* CTA Buttons */}
-                        <div className="mt-8 flex flex-col sm:flex-row gap-4">
+                        <div className="mt-8 flex flex-col sm:flex-row gap-3 sm:gap-4">
                             <a
                                 href="#contact"
-                                className="inline-flex items-center justify-center bg-cta hover:bg-cta-dark text-white font-bold text-lg px-8 py-4 rounded-lg transition-all duration-200 hover:translate-y-[-2px] shadow-lg shadow-orange-500/20 cursor-pointer"
+                                className="inline-flex items-center justify-center bg-cta hover:bg-cta-dark text-white font-bold text-base sm:text-lg px-6 sm:px-8 py-3.5 sm:py-4 rounded-lg transition-all duration-200 hover:translate-y-[-2px] shadow-lg shadow-orange-500/20 cursor-pointer"
                             >
                                 Get a Free Quote
                             </a>
                             <a
                                 href={siteConfig.phoneHref}
-                                className="inline-flex items-center justify-center gap-2 border-2 border-white/20 hover:border-primary-light text-white font-semibold text-lg px-8 py-4 rounded-lg transition-all duration-200 hover:translate-y-[-2px] cursor-pointer"
+                                className="inline-flex items-center justify-center gap-2 border-2 border-white/20 hover:border-primary-light text-white font-semibold text-base sm:text-lg px-6 sm:px-8 py-3.5 sm:py-4 rounded-lg transition-all duration-200 hover:translate-y-[-2px] cursor-pointer"
                             >
                                 <Phone className="w-5 h-5" />
                                 {siteConfig.phone}
@@ -72,7 +72,7 @@ export default function Hero() {
                     </div>
 
                     {/* Right Column — Info Sidebar */}
-                    <div className="space-y-0 bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10">
+                    <div className="space-y-0 bg-white/5 backdrop-blur-sm rounded-xl p-4 sm:p-6 border border-white/10">
                         {/* Hours */}
                         <div className="pb-5">
                             <div className="flex items-center gap-2 mb-2">

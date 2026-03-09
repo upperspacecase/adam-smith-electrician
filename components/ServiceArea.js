@@ -35,7 +35,7 @@ export default function ServiceArea() {
                             <MapPin className="w-5 h-5 text-cta" />
                             Areas We Service
                         </h3>
-                        <div className="grid grid-cols-2 gap-x-6 gap-y-2">
+                        <div className="grid grid-cols-2 gap-x-4 sm:gap-x-6 gap-y-2">
                             {serviceArea.suburbs.map((suburb, i) => (
                                 <p
                                     key={i}

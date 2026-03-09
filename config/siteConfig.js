@@ -18,9 +18,6 @@ const siteConfig = {
   // TRUST BAR
   // ============================================================
   trustBar: {
-    googleRating: 4.8,
-    googleReviewCount: 212,
-    yearsInBusiness: 11,
     credential: "Master Electrician",
   },
 
@@ -72,14 +69,13 @@ const siteConfig = {
   about: {
     headline: "Trusted. Local. Licensed.",
     text: "With over a decade serving New York City, Adam Smith Electrical is built on honest work and fair pricing. Every job is completed by a licensed, insured electrician who treats your property like his own. From Manhattan high-rises to Brooklyn brownstones, no job is too big or too small.",
-    image: null, // Replace with actual image path e.g. "/images/team.jpg"
+    image: "/images/team.jpg",
   },
 
   // ============================================================
   // GOOGLE REVIEWS
   // ============================================================
   reviews: {
-    businessName: "Adam Smith Electrical",
     rating: 4.8,
     totalReviews: 212,
     googleMapsUrl:
@@ -162,7 +158,7 @@ const siteConfig = {
       "Lighting",
       "Other",
     ],
-    recipientEmail: "adam@adamsmithelectrical.com",
+    // recipientEmail derived from siteConfig.email
   },
 };
 

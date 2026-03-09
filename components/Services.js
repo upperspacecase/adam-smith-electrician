@@ -22,7 +22,7 @@ export default function Services() {
                             <a
                                 key={i}
                                 href="#contact"
-                                className="group block bg-surface hover:bg-primary rounded-xl p-6 transition-colors duration-200 border border-gray-100 hover:border-primary cursor-pointer"
+                                className="group block bg-surface hover:bg-primary rounded-xl p-4 sm:p-6 transition-colors duration-200 border border-gray-100 hover:border-primary cursor-pointer"
                             >
                                 <div className="w-12 h-12 rounded-lg bg-primary/10 group-hover:bg-white/20 flex items-center justify-center mb-4">
                                     <Icon className="w-6 h-6 text-primary group-hover:text-white" />

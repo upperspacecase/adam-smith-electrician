@@ -29,7 +29,7 @@ export default function Header() {
                     <div className="flex items-center gap-3">
                         <a
                             href={siteConfig.smsHref}
-                            className="inline-flex items-center gap-2 bg-cta hover:bg-cta-dark text-white font-bold text-sm px-4 py-2 rounded-lg transition-colors duration-200 cursor-pointer"
+                            className="inline-flex items-center gap-2 bg-cta hover:bg-cta-dark text-white font-bold text-sm px-4 py-2.5 min-h-[44px] rounded-lg transition-colors duration-200 cursor-pointer"
                         >
                             <MessageSquare className="w-4 h-4" />
                             <span className="hidden sm:inline">Text Us Now</span>
